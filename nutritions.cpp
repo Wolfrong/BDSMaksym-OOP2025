@@ -1,34 +1,49 @@
 #include "nutritions.h"
 #include <iostream>
 #include <fstream>
-#include <unordered_map>
+#include <string>
+#include <ctime>
+#include <sstream>
 
-std::unordered_map<std::string, nutritions> loadMeals(const std::string& filename) {
-    std::unordered_map<std::string, nutritions> meals;
-    std::ifstream file(filename);
-
-    if (!file.is_open()) {
-        std::cerr << "Error: cannot open " << filename << "\n";
-        return meals;
-    }
-
-    std::string name;
-    nutritions n;
-
-    while (file >> name >> n.calories >> n.protein >> n.fats >> n.carbonates) {
-        meals[name] = n;
-    }
-    return meals;
+std::string getDate(){
+    std::time_t t = std::time(nullptr);
+    std::tm tm{};
+#ifdef _WIN32
+    localtime_s(&tm, &t);
+#else
+    localtime_r(&t, &tm);
+#endif
+    char date[11];
+    std::strftime(date, sizeof(date), "%d-%m-%Y", &tm);
+    return std::string(date);
 }
 
-int main() {
-	auto meals = loadMeals("meals.txt");
-	for (const auto& [name, n] : meals) {
-		std::cout << "Meal: " << name << "\n"
-			<< "  Calories: " << n.calories << "\n"
-			<< "  Protein: " << n.protein << "g\n"
-			<< "  Fats: " << n.fats << "g\n"
-			<< "  Carbonates: " << n.carbonates << "g\n\n";
-	}
-	return 0;
+nutritions::nutritions(std::string& dish, double weight, double water)
+	: dish(dish), weight(weight), water(water) {
+}
+double nutritions::calculate_calories(){
+	return weight * 1.2;
+}
+void nutritions::saveToFile(const std::string& meal_calendar) {
+	std::string date = getDate();
+    double calories = calculate_calories();
+    std::ofstream out(meal_calendar, std::ios::app);
+    out << date << " " << dish << " " << weight << " " << water << " " << calories << "\n";
+    out.close();
+    std::cout << "Saved to " << meal_calendar << " successfully.\n";
+}
+
+void nutritions::GetFromFile(const std::string& meal_calendar, const std::string& date) {
+    std::ifstream in(meal_calendar);
+    std::string line;
+    std::stringstream ss(line);
+    std::string d, dishName;
+    double weight, water, calories;
+    while (in >> d >> dishName >> weight >> water >> calories) {
+        if (d == date) {
+            std::cout << "Calories on " << d << ": " << calories << " kcal\n";
+            return;
+        }
+    }
+    std::cerr << "No record found for date: " << date << std::endl;
 }

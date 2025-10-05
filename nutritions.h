@@ -1,27 +1,15 @@
 #pragma once
-#include "fstream"
-#include "string"
+#include <fstream>
 
-class nutritions {
+class nutritions{
+    double weight;
+    double water;
+    double calculate_calories();
+
 public:
-    int calories;
-    int protein;
-    int fats;
-    int carbonates;
-    int water_L;
-	int weight_g;
-
-    
-};
-enum class Dish {
-    Mushroom_Risotto,
-    Chicken_Pasta_Sauce,
-    Chicken_With_Vegetables,
-    CaesarSalad,
-    UkrainianBorscht,
-    MashedPotatoesWithGravy,
-    BeefPilaf,
-    BuckwheatWithMushrooms,
-    VegetableStew,
-    SteamedTurkeyCutlet,
+    std::string dish;
+    nutritions(std::string& dish, double weight, double water);
+    nutritions(std::istream& in);
+    void saveToFile(const std::string& filename);
+    static void GetFromFile(const std::string& filename, const std::string& date);
 };

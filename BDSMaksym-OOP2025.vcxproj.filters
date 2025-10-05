@@ -15,8 +15,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BDSMaksym-OOP2025.cpp">
+    <ClCompile Include="activity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mood.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nutritions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="activity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mood.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nutritions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="x64\Debug\meals.txt" />
   </ItemGroup>
 </Project>
