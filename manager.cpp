@@ -28,60 +28,60 @@ void manager::test_run() const
 {
     Mood mood(moodLogFile.c_str(), jokesFile.c_str());
     int moodVal = 0;
-    std::cout << "Введiть сьогоднiшнiй настрiй (1..5): ";
+    std::cout << "today`s mood (1..5): ";
     std::cin  >> moodVal;
 
     if (!mood.setMood(moodVal))
     {
-        std::cout << "Некоректний настрiй \n";
+        std::cout << "eror \n";
     } else
     {
         if (!mood.save())
-            std::cout << "Не вдалося зберегти настрiй у файл: " << moodLogFile << "\n";
+            std::cout << "eror " << moodLogFile << "\n";
         if (moodVal <= 2)
         {
             char buf[512];
             if (mood.randomJoke(buf, sizeof(buf)))
             {
-                std::cout << "\n Анекдот: " << buf << "\n";
+                std::cout << "\n joke: " << buf << "\n";
             }
         }
     }
 
     int nFood = 0;
-    std::cout << "\nСкiльки записiв про їжу/воду внести сьогоднi? ";
+    std::cout << "\nHow many food do you want to do?: ";
     std::cin  >> nFood;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     for (int i = 0; i < nFood; ++i)
     {
         nutritions rec;
-        std::cout << "\nЗапис #" << (i+1) << "\n";
-        std::cout << " Назва страви (одне слово): ";
+        std::cout << "\n record : " << (i+1) << "\n";
+        std::cout << " name of the dish: ";
         std::cin  >> rec.dish;
-        std::cout << " Вага продукту (г): ";
+        std::cout << " weight kg: ";
         std::cin  >> rec.prod_weight;
-        std::cout << " Вода (л) (0, якщо немає): ";
+        std::cout << " water L ";
         std::cin  >> rec.water;
         rec.calories = rec.calculate_calories();
         rec.save_to_file(foodFile);
     }
 
     int nAct = 0;
-    std::cout << "\nСкiльки активностей додати за сьогоднi? ";
+    std::cout << "\n How many activities do you want to do?: ";
     std::cin  >> nAct;
 
     for (int i = 0; i < nAct; ++i)
     {
         activity a;
-        std::cout << "\nАктивнiсть " << (i+1) << ":\n"
+        std::cout << "\n activities " << (i+1) << ":\n"
                   << " 1 - Running\n"
                   << " 2 - Swimming\n"
                   << " 3 - Cycling\n"
                   << " 4 - Walking\n"
                   << " 5 - StrengthTraining\n"
                   << " 6 - Yoga\n"
-                  << "Ваш вибiр: ";
+                  << "your choice : ";
         int code = 1; std::cin >> code;
         switch (code)
         {
@@ -94,11 +94,11 @@ void manager::test_run() const
             default: a.type = ExerciseType::Running; break;
         }
 
-        std::cout << " Тривалiсть (хв): ";
+        std::cout << " duration m  ";
         std::cin  >> a.durationMin;
         a.weight = (weightKg > 0.0 ? weightKg : 70.0);
         a.save_to_file(activityFile);
-        std::cout << " Орієнтовно спалено ккал: " << a.calculate_calories() << "\n";
+        std::cout << " calories burned: " << a.calculate_calories() << "\n";
     }
 
     const std::string today = today_ddmmyyyy();
@@ -107,9 +107,9 @@ void manager::test_run() const
     double water  = nutritions::get_daily_water (foodFile, today);
     double burned = activity  ::get_daily_burned_calories(activityFile, today);
 
-    std::cout << "\n=== Пiдсумки за " << today << " ===\n";
-    std::cout << " З'їдено калорiй: " << eaten  << " ккал\n";
-    std::cout << " Спалено калорiй: " << burned << " ккал\n";
-    std::cout << " Випито води:     " << water  << " л\n";
-    std::cout << "===============================\n\n";
+    std::cout << "\n result " << today << " ===\n";
+    std::cout << " calories eaten: " << eaten  << " cal\n";
+    std::cout << " calories burned: " << burned << " cal\n";
+    std::cout << " Випито води:     " << water  << " L\n";
+
 }
