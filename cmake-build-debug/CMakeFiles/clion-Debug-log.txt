@@ -11,6 +11,15 @@
 -- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2024.2.1/bin/mingw/bin/g++.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (4.2s)
--- Generating done (0.0s)
--- Build files have been written to: D:/2 курс/ООП/git/BDSMaksym-OOP2025/cmake-build-debug
+-- Configuring done (15.0s)
+CMake Error at CMakeLists.txt:8 (add_executable):
+  Cannot find source file:
+
+    mood_log.csv
+
+
+CMake Error at CMakeLists.txt:8 (add_executable):
+  No SOURCES given to target: BDSMaksym_OOP2025
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
