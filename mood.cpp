@@ -48,7 +48,7 @@ int Mood::save() const
     return 1;
 }
 
-int Mood::randomJokeIfBad(char* out, std::size_t cap) const
+int Mood::randomJoke(char* out, std::size_t cap) const
 {
     if(!out||!cap||mood_>2) return 0; out[0]='\0';
     std::FILE* f = std::fopen(jokePath_, "rb"); if(!f) return 0;
