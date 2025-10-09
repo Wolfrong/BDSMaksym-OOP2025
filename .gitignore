@@ -1,3 +1,66 @@
-.vs/BDSMaksym-OOP2025/FileContentIndex/c9028f6d-c6c8-4e32-999f-43d40e8db65a.vsidx
-.vs/BDSMaksym-OOP2025/FileContentIndex/596a4126-565a-4ceb-85fe-97db90b02560.vsidx
-/.vs/BDSMaksym-OOP2025/FileContentIndex
+#Загальні тимчасові файли
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+#Виконувані файли та об’єкти
+*.exe
+*.dll
+*.so
+*.dylib
+*.lib
+*.a
+*.obj
+*.o
+*.pdb
+*.idb
+*.ilk
+*.out
+
+#Кеші компілятора
+*.pch
+
+#CMake
+CMakeFiles/
+CMakeCache.txt
+cmake-build-*/
+Makefile
+CMakeScripts/
+Testing/
+CTestTestfile.cmake
+_install/
+install_manifest.txt
+
+#CLion
+.idea/
+cmake-build-debug/
+cmake-build-release/
+cmake-build-*/
+
+#Visual Studio
+.vs/
+*.vcxproj.user
+*.vcxproj.filters
+[Bb]in/
+[Oo]bj/
+Debug/
+Release/
+x64/
+x86/
+
+#VS Solution/User files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ====== Інші IDE ======
+.vscode/
+
+# ====== Системне ======
+*.iml
+*.class
