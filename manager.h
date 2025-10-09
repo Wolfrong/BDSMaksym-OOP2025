@@ -7,9 +7,9 @@ class manager {
 public:
     std::string name;
     std::string gender;
-    int age{0};
-    double weightKg{0.0};
-    double heightCm{0.0};
+    int age{25};
+    double weightKg{72.0};
+    double heightCm{178.0};
     bool inclusive{false};
 
     std::string foodFile = "nutrition_log.txt";

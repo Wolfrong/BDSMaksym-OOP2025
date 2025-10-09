@@ -38,11 +38,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="activity.cpp" />
+    <ClCompile Include="manager.cpp" />
     <ClCompile Include="mood.cpp" />
     <ClCompile Include="nutritions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="activity.h" />
+    <ClInclude Include="manager.h" />
     <ClInclude Include="mood.h" />
     <ClInclude Include="nutritions.h" />
   </ItemGroup>

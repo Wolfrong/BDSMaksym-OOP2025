@@ -2,7 +2,6 @@
 #include "mood.h"
 #include "nutritions.h"
 #include "activity.h"
-
 #include <iostream>
 #include <limits>
 #include <ctime>
@@ -24,67 +23,61 @@ std::string manager::today_ddmmyyyy()
     return std::string(date);
 }
 
-void manager::test_run() const
-{
+void manager::test_run() const{
     Mood mood(moodLogFile.c_str(), jokesFile.c_str());
     int moodVal = 0;
     std::cout << "today`s mood (1..5): ";
     std::cin  >> moodVal;
 
-    if (!mood.setMood(moodVal))
-    {
-        std::cout << "eror \n";
-    } else
-    {
-        if (!mood.save())
-            std::cout << "eror " << moodLogFile << "\n";
-        if (moodVal <= 2)
-        {
+    if (!mood.setMood(moodVal)){
+        std::cout << "error \n";
+    } else{
+        if (!mood.save()) {
+            std::cout << "error " << moodLogFile << "\n";
+        }
+        if (moodVal <= 2){
             char buf[512];
-            if (mood.randomJoke(buf, sizeof(buf)))
-            {
+            if (mood.randomJoke(buf, sizeof(buf))){
                 std::cout << "\n joke: " << buf << "\n";
             }
         }
     }
 
     int nFood = 0;
-    std::cout << "\nHow many food do you want to do?: ";
+    std::cout << "\nHow many meals have you had?: ";
     std::cin  >> nFood;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-    for (int i = 0; i < nFood; ++i)
-    {
+    for (int i = 0; i < nFood; ++i){
         nutritions rec;
-        std::cout << "\n record : " << (i+1) << "\n";
-        std::cout << " name of the dish: ";
+        std::cout << "\n Your meal: " << (i+1) << "\n";
+        std::cout << "Dish:";
         std::cin  >> rec.dish;
-        std::cout << " weight kg: ";
+        std::cout << "Meal weight (kg): ";
         std::cin  >> rec.prod_weight;
-        std::cout << " water L ";
+        std::cout << "Water drunk (L): ";
         std::cin  >> rec.water;
         rec.calories = rec.calculate_calories();
         rec.save_to_file(foodFile);
     }
 
     int nAct = 0;
-    std::cout << "\n How many activities do you want to do?: ";
+    std::cout << "\n How many activities have you done?: ";
     std::cin  >> nAct;
 
     for (int i = 0; i < nAct; ++i)
     {
         activity a;
-        std::cout << "\n activities " << (i+1) << ":\n"
+        std::cout << "\n Enter activity " << (i+1) << ":\n"
                   << " 1 - Running\n"
                   << " 2 - Swimming\n"
                   << " 3 - Cycling\n"
                   << " 4 - Walking\n"
                   << " 5 - StrengthTraining\n"
                   << " 6 - Yoga\n"
-                  << "your choice : ";
+                  << "Your choice : ";
         int code = 1; std::cin >> code;
-        switch (code)
-        {
+        switch (code){
             case 1: a.type = ExerciseType::Running; break;
             case 2: a.type = ExerciseType::Swimming; break;
             case 3: a.type = ExerciseType::Cycling; break;
@@ -93,23 +86,21 @@ void manager::test_run() const
             case 6: a.type = ExerciseType::Yoga; break;
             default: a.type = ExerciseType::Running; break;
         }
-
-        std::cout << " duration m  ";
+        std::cout << "Duration (Min): ";
         std::cin  >> a.durationMin;
         a.weight = (weightKg > 0.0 ? weightKg : 70.0);
         a.save_to_file(activityFile);
-        std::cout << " calories burned: " << a.calculate_calories() << "\n";
+        std::cout << "Calories burned: " << a.calculate_calories() << "\n";
     }
 
     const std::string today = today_ddmmyyyy();
-
     int eaten  = nutritions::get_daily_calories (foodFile, today);
     double water  = nutritions::get_daily_water (foodFile, today);
     double burned = activity  ::get_daily_burned_calories(activityFile, today);
 
-    std::cout << "\n result " << today << " ===\n";
-    std::cout << " calories eaten: " << eaten  << " cal\n";
-    std::cout << " calories burned: " << burned << " cal\n";
-    std::cout << " Випито води:     " << water  << " L\n";
+    std::cout << "\n Result on " << today << "\n";
+    std::cout << " Calories eaten today: " << eaten  << " cal\n";
+    std::cout << " Calories burned today: " << burned << " cal\n";
+    std::cout << " Water drank today:     " << water  << " L\n";
 
 }
