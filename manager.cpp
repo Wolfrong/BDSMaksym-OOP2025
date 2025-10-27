@@ -30,14 +30,24 @@ void manager::test_run() const
     const std::string today = today_ddmmyyyy();
 
     int moodVal = 0;
-    std::cout << "today`s mood (1..5): ";
-    std::cin  >> moodVal;
-    if (moodVal < 1 || moodVal > 5) {
-        std::cout << "error: mood out of range\n";
-    } else {
-        std::string note = (moodVal >=4 ? "great_day" : (moodVal==3 ? "ok" : "tired"));
-        if (!log.addMood(today, moodVal, note)) std::cout << "write error (mood)\n";
+std::cout << "today`s mood (1..5): ";
+std::cin  >> moodVal;
+
+	if (moodVal >= 1 && moodVal <= 5) {
+    if (!log.addMood(today, moodVal, "")) {
+        std::cout << "write error (mood)\n";
     }
+    if (moodVal < 2) {
+        Mood m(nullptr, jokesFile.c_str());
+        m.setMood(moodVal);
+        char buf[512];
+        if (m.randomJoke(buf, sizeof(buf))) {
+            std::cout << "\n joke: " << buf << "\n";
+        }
+    }
+	} else {
+    std::cout << "error: mood out of range\n";
+	}
 
     int nFood = 0;
     std::cout << "\nHow many meals have you had?: ";

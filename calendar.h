@@ -33,6 +33,5 @@ private:
     static bool startsWith(const std::string& s, const std::string& pfx);
 
     bool ensureSkeleton() const;
-    bool insertUnderSection(const std::string& section,
-                            const std::string& line) const;
+    bool insertUnderSection(const std::string& section, const std::string& line) const;
 };
