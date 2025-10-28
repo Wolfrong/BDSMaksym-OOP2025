@@ -1,68 +1,37 @@
 #include "nutritions.h"
-#include <iostream>
 #include <fstream>
-#include <ctime>
-#include <sstream>
+#include <string>
 
-std::string get_date() {
-    std::time_t t = std::time(nullptr);
-    std::tm tm{};
-#ifdef _WIN32
-    localtime_s(&tm, &t);
-#else
-    localtime_r(&t, &tm);
-#endif
-    char date[11];
-    std::strftime(date, sizeof(date), "%d-%m-%Y", &tm);
-    return std::string(date);
+nutritions::nutritions(const Meal& meal, double g) 
+    : meal_info(meal), meal_weight(g) {}
+
+double nutritions::get_calories() const{
+    return (meal_info.protein * 4 + meal_info.fat * 9 + meal_info.carbs * 4) * meal_weight / 100.0;
 }
 
-double nutritions::calculate_calories() const {
-    return prod_weight * 1.2;
+double nutritions::get_protein() const{ 
+    return meal_info.protein * meal_weight / 100.0; 
+}
+double nutritions::get_fat() const{ 
+    return meal_info.fat * meal_weight / 100.0; 
+}
+double nutritions::get_carbs() const{ 
+    return meal_info.carbs * meal_weight / 100.0; 
+}
+double nutritions::get_meal_weight() const{ 
+    return meal_weight; 
 }
 
-void nutritions::save_to_file(const std::string& filename) const {
-    std::ofstream out(filename, std::ios::app);
-    out << get_date() << " " << dish << " " << prod_weight << " " << calories << " " << water << "\n";
-}
-std::vector<nutritions> nutritions::get_from_file(const std::string& filename, const std::string& date) {
-    std::ifstream in(filename);
-    std::vector<nutritions> result;
-    if (!in) return result;
-    std::string d, dish;
-    nutritions record;
-    while (in >> d >> record.dish >> record.prod_weight >> record.calories >> record.water) {
-        if (d == date) {
-            result.push_back(record);
+Meal Meal::find_dish(const std::string& dish_find) {
+    std::fstream file("meals_list.txt");
+    std::string dish_name;
+    double protein, fat, carbs;
+    if(dish_name == "Water"){
+        return Meal("Water", 0, 0, 0);
+	}
+    while (file >> dish_name >> protein >> fat >> carbs) {
+        if (dish_name == dish_find) {
+            return Meal(dish_name, protein, fat, carbs);
         }
     }
-    return result;
-}
-
-int nutritions::get_daily_calories(const std::string& filename, const std::string& date)
-{
-    auto records = get_from_file(filename, date);
-	int total_calories = 0;
-	for (const auto& record : records) {
-		total_calories += record.get_calories();
-	}
-	return total_calories;
-}
-double nutritions::get_daily_water(const std::string& filename, const std::string& date)
-{
-    auto records = get_from_file(filename, date);
-    double total_water = 0.0;
-    for (const auto& record : records) {
-        total_water += record.get_water();
-    }
-    return total_water;
-}
-double nutritions::get_daily_prod_weight(const std::string& filename, const std::string& date)
-{
-    auto records = get_from_file(filename, date);
-    double total_prod_weight = 0.0;
-    for (const auto& record : records) {
-        total_prod_weight += record.get_prod_weight();
-    }
-    return total_prod_weight;
 }

@@ -43,6 +43,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="x64\Debug\meals.txt" />
+    <Text Include="meals_list.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

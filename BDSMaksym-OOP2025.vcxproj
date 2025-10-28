@@ -49,7 +49,7 @@
     <ClInclude Include="nutritions.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="x64\Debug\meals.txt" />
+    <Text Include="meals_list.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>
