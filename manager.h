@@ -2,6 +2,7 @@
 #define MANAGER_H
 
 #include <string>
+#include "calendar.h"
 
 class manager {
 public:
@@ -16,10 +17,12 @@ public:
 
     manager() = default;
     manager(std::string nm, std::string g, int age, double w, double h, bool incl = false);
+    ~manager();
 
-    void test_run() const;
+    void test_run();
 
 private:
+    CalendarHealth* log_{nullptr};
     static std::string today_ddmmyyyy();
 };
 
