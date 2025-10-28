@@ -12,9 +12,6 @@ public:
     double heightCm{178.0};
     bool inclusive{false};
 
-    std::string foodFile = "nutrition_log.txt";
-    std::string activityFile = "activity_log.txt";
-    std::string moodLogFile = "mood_log.txt";
     std::string jokesFile = "anekdoty.txt";
 
     manager() = default;
