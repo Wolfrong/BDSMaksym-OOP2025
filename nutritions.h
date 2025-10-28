@@ -1,25 +1,33 @@
 #pragma once
-#include <fstream>
 #include <string>
-#include <vector>
+#include <unordered_map>
 
 class nutritions {
+private:
+    ProductInfo product_info;
+    double meal_weight;
+
 public:
-    double prod_weight;
-    double water;
-    double calories;
-    std::string dish;
-    double calculate_calories() const;
-    nutritions() = default;
+    nutritions(const ProductInfo& p, double g = 100);
+    // звичайні гетери для КБЖУ, їх берем в менеджері
+    double get_calories() const;
+    double get_protein() const;
+    double get_fat() const;
+    double get_carbs() const;
+};
 
-    double get_calories() const { return calories; }
-	double get_water() const { return water; }
-	double get_prod_weight() const { return prod_weight; }
+// класс для самих страв
+class ProductInfo{
+public:
+    std::string dish_name;
+    // скільки БЖУ на 100г страви
+    double protein;
+    double fat;
+    double carbs;
 
-    static int get_daily_calories(const std::string& filename, const std::string& date);
-    static double get_daily_water(const std::string& filename, const std::string& date);
-	static double get_daily_prod_weight(const std::string& filename, const std::string& date);
-
-    void save_to_file(const std::string& filename) const;
-    static std::vector<nutritions> get_from_file(const std::string& filename, const std::string& date);
+    ProductInfo(const std::string& n = "", double p = 0, double f = 0, double c = 0)
+        : dish_name(n), protein(p), fat(f), carbs(c) {
+    }
+	// крч ми читаєм наш файлік зі стравами і БЖУ
+    ProductInfo ProductInfo::find_meal(const std::string& meal_find);
 };

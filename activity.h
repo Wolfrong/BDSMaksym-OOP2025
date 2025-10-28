@@ -8,25 +8,7 @@ enum class ExerciseType {
     Cycling, 
     Walking, 
     StrengthTraining, 
-    Yoga, 
-    Dancing,
-    Hiking,
-    Aerobics,
-    Boxing,
-    Rowing,
-    JumpRope,
-    Basketball,
-    Football,
-    Pilates,
-    Tennis,
-    Skating,
-    Skiing,
-    Stretching,
-    StairClimbing,
-    Crossfit,
-    HouseCleaning,
-    Gardening,
-    Climbing
+    Yoga
 };
 
 class activity {

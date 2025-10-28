@@ -9,8 +9,7 @@
 manager::manager(std::string nm, std::string g, int age, double w, double h, bool incl)
 : name(std::move(nm)), gender(std::move(g)), age(age), weightKg(w), heightCm(h), inclusive(incl) {}
 
-std::string manager::today_ddmmyyyy()
-{
+std::string manager::today_ddmmyyyy(){
     std::time_t t = std::time(nullptr);
     std::tm tm{};
 #ifdef _WIN32
@@ -53,7 +52,7 @@ void manager::test_run() const{
         std::cout << "\n Your meal: " << (i+1) << "\n";
         std::cout << "Dish:";
         std::cin  >> rec.dish;
-        std::cout << "Meal weight (kg): ";
+        std::cout << "Meal weight (g): ";
         std::cin  >> rec.prod_weight;
         std::cout << "Water drunk (L): ";
         std::cin  >> rec.water;
@@ -102,5 +101,11 @@ void manager::test_run() const{
     std::cout << " Calories eaten today: " << eaten  << " cal\n";
     std::cout << " Calories burned today: " << burned << " cal\n";
     std::cout << " Water drank today:     " << water  << " L\n";
+}
 
+int main(){
+    manager test;
+	test.test_run();
+    system("Pause");
+	return 0;
 }

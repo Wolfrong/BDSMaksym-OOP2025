@@ -26,4 +26,4 @@ private:
     static std::string today_ddmmyyyy();
 };
 
-#endif // MANAGER_H
+#endif
