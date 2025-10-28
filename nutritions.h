@@ -4,11 +4,11 @@
 
 class nutritions {
 private:
-    ProductInfo product_info;
+    Meal meal_info;
     double meal_weight;
 
 public:
-    nutritions(const ProductInfo& p, double g = 100);
+    nutritions(const Meal& meal, double g = 100);
     // звичайні гетери для КБЖУ, їх берем в менеджері
     double get_calories() const;
     double get_protein() const;
@@ -17,7 +17,7 @@ public:
 };
 
 // класс для самих страв
-class ProductInfo{
+class Meal{
 public:
     std::string dish_name;
     // скільки БЖУ на 100г страви
@@ -25,9 +25,9 @@ public:
     double fat;
     double carbs;
 
-    ProductInfo(const std::string& n = "", double p = 0, double f = 0, double c = 0)
+    Meal(const std::string& n = "", double p = 0, double f = 0, double c = 0)
         : dish_name(n), protein(p), fat(f), carbs(c) {
     }
 	// крч ми читаєм наш файлік зі стравами і БЖУ
-    ProductInfo ProductInfo::find_meal(const std::string& meal_find);
+    static Meal find_dish(const std::string& meal_find);
 };
