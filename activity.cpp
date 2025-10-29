@@ -2,7 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
-
+//changed
 ActivityInfo::ActivityInfo(const std::string& n, double met)
     : name(n), MET(met) {
 }
