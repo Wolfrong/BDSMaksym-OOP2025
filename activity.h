@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-
+// aggregation of activity information
 class ActivityInfo {
 public:
     std::string name;
