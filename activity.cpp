@@ -2,13 +2,9 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
-//changed
+
 ActivityInfo::ActivityInfo(const std::string& n, double met)
     : name(n), MET(met) {
-}
-
-activity::activity(const ActivityInfo& i, double d, double w)
-    : info(i), durationMin(d), weight(w) {
 }
 
 ActivityInfo ActivityInfo::find_activity(const std::string& activity_name) {
@@ -32,6 +28,34 @@ ActivityInfo ActivityInfo::find_activity(const std::string& activity_name) {
     return ActivityInfo(activity_name, 1.0);
 }
 
-double activity::calculate_calories() const {
-    return durationMin * info.MET * weight * 0.0175;
+activity::activity(const ActivityInfo& i, double d, double w, ActivityKind k)
+    : info(i), durationMin(d), weightKg(w), kind(k) {
 }
+
+std::string activity::getName() const {
+    return info.name;
+}
+double activity::calculate(double durationMin, double weightKg) const {
+    switch (kind) {
+
+    case ActivityKind::Simple:
+        // всі low-intensity активності
+        return durationMin * info.MET * weightKg * 0.0175;
+
+    case ActivityKind::Cardio:
+        // cardio більш енерговитратне
+        return durationMin * info.MET * weightKg * 0.02;
+
+    case ActivityKind::Strength:
+        // силові мають іншу фізіологію
+        return durationMin * weightKg * 0.03;
+
+    default:
+        return durationMin * info.MET * weightKg * 0.0175;
+    }
+}
+
+double activity::calculate() const {
+    return calculate(durationMin, weightKg);
+}
+

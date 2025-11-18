@@ -1,47 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\",
+  "WorkspaceRootPath": "D:\\2 \u043A\u0443\u0440\u0441\\OOP\\BDSMaksym-OOP2025\\",
   "Documents": [
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\nutritions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|solutionrelative:nutritions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\nutritions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|solutionrelative:nutritions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\meals_list.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|solutionrelative:meals_list.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-=======
-      "AbsoluteMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\manager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|solutionrelative:manager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\mood.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|solutionrelative:mood.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\mood.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|solutionrelative:mood.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\activity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|solutionrelative:activity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\activity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|D:\\2 \u043A\u0443\u0440\u0441\\OOP\\BDSMaksym-OOP2025\\activity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|solutionrelative:activity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\nutritions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|D:\\2 \u043A\u0443\u0440\u0441\\OOP\\BDSMaksym-OOP2025\\activity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|solutionrelative:activity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|D:\\2 \u043A\u0443\u0440\u0441\\OOP\\BDSMaksym-OOP2025\\nutritions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|solutionrelative:nutritions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\nutritions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|D:\\2 \u043A\u0443\u0440\u0441\\OOP\\BDSMaksym-OOP2025\\nutritions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|solutionrelative:nutritions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
->>>>>>> nutrtitions
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|D:\\2 \u043A\u0443\u0440\u0441\\OOP\\BDSMaksym-OOP2025\\manager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D6A8A12C-DC2B-47F1-967F-1CFD1749ACCC}|BDSMaksym-OOP2025.vcxproj|solutionrelative:manager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,148 +30,80 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-=======
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "manager.h",
-              "DocumentMoniker": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\manager.h",
-              "RelativeDocumentMoniker": "manager.h",
-              "ToolTip": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\manager.h",
-              "RelativeToolTip": "manager.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-09T22:13:34.842Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "mood.cpp",
-              "DocumentMoniker": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\mood.cpp",
-              "RelativeDocumentMoniker": "mood.cpp",
-              "ToolTip": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\mood.cpp",
-              "RelativeToolTip": "mood.cpp",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADoAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-14T11:37:40.597Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "mood.h",
-              "DocumentMoniker": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\mood.h",
-              "RelativeDocumentMoniker": "mood.h",
-              "ToolTip": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\mood.h",
-              "RelativeToolTip": "mood.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-09T20:38:17.167Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
->>>>>>> nutrtitions
-              "Title": "nutritions.cpp",
-              "DocumentMoniker": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\nutritions.cpp",
-              "RelativeDocumentMoniker": "nutritions.cpp",
-              "ToolTip": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\nutritions.cpp",
-              "RelativeToolTip": "nutritions.cpp",
-<<<<<<< HEAD
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-14T11:37:38.92Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-=======
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACMAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-14T11:37:38.92Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
->>>>>>> nutrtitions
-              "Title": "nutritions.h",
-              "DocumentMoniker": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\nutritions.h",
-              "RelativeDocumentMoniker": "nutritions.h",
-              "ToolTip": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\nutritions.h",
-              "RelativeToolTip": "nutritions.h",
-<<<<<<< HEAD
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-14T11:37:42.773Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "meals_list.txt",
-              "DocumentMoniker": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\meals_list.txt",
-              "RelativeDocumentMoniker": "meals_list.txt",
-              "ToolTip": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\meals_list.txt",
-              "RelativeToolTip": "meals_list.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-10-28T21:13:45.225Z",
-              "EditorCaption": ""
-=======
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-14T11:37:42.773Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "activity.cpp",
-              "DocumentMoniker": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\activity.cpp",
-              "RelativeDocumentMoniker": "activity.cpp",
-              "ToolTip": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\activity.cpp",
-              "RelativeToolTip": "activity.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-08T10:40:17.297Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "activity.h",
-              "DocumentMoniker": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\activity.h",
-              "RelativeDocumentMoniker": "activity.h",
-              "ToolTip": "C:\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Project\\BDSMaksym-OOP2025\\activity.h",
-              "RelativeToolTip": "activity.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-08T10:40:26.327Z",
-              "IsPinned": true
->>>>>>> nutrtitions
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "manager.cpp",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441\\OOP\\BDSMaksym-OOP2025\\manager.cpp",
+              "RelativeDocumentMoniker": "manager.cpp",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441\\OOP\\BDSMaksym-OOP2025\\manager.cpp",
+              "RelativeToolTip": "manager.cpp",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-18T19:01:03.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "activity.h",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441\\OOP\\BDSMaksym-OOP2025\\activity.h",
+              "RelativeDocumentMoniker": "activity.h",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441\\OOP\\BDSMaksym-OOP2025\\activity.h",
+              "RelativeToolTip": "activity.h",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-18T18:33:04.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "activity.cpp",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441\\OOP\\BDSMaksym-OOP2025\\activity.cpp",
+              "RelativeDocumentMoniker": "activity.cpp",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441\\OOP\\BDSMaksym-OOP2025\\activity.cpp",
+              "RelativeToolTip": "activity.cpp",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAADcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-18T18:32:32.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "nutritions.cpp",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441\\OOP\\BDSMaksym-OOP2025\\nutritions.cpp",
+              "RelativeDocumentMoniker": "nutritions.cpp",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441\\OOP\\BDSMaksym-OOP2025\\nutritions.cpp",
+              "RelativeToolTip": "nutritions.cpp",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-18T14:07:46.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "nutritions.h",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441\\OOP\\BDSMaksym-OOP2025\\nutritions.h",
+              "RelativeDocumentMoniker": "nutritions.h",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441\\OOP\\BDSMaksym-OOP2025\\nutritions.h",
+              "RelativeToolTip": "nutritions.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-18T14:07:46.915Z",
+              "EditorCaption": ""
             }
           ]
         }

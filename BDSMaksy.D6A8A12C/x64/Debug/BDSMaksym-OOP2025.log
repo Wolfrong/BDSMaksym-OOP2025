@@ -1,2 +1,46 @@
 ﻿  manager.cpp
-  BDSMaksym-OOP2025.vcxproj -> C:\2 курс\ООП\Project\BDSMaksym-OOP2025\x64\Debug\BDSMaksym-OOP2025.exe
+D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.h(6,10): error C3646: 'meal_info': unknown override specifier
+  (compiling source file 'manager.cpp')
+  
+D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.h(6,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'manager.cpp')
+  
+D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.h(10,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'manager.cpp')
+  
+D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.h(10,26): error C2143: syntax error: missing ',' before '&'
+  (compiling source file 'manager.cpp')
+  
+D:\2 курс\OOP\BDSMaksym-OOP2025\manager.cpp(78,23): error C2661: 'nutritions::nutritions': no overloaded function takes 2 arguments
+      D:\2 курс\OOP\BDSMaksym-OOP2025\manager.cpp(78,23):
+      while trying to match the argument list '(Meal, double)'
+  
+D:\2 курс\OOP\BDSMaksym-OOP2025\manager.cpp(107,19): error C2661: 'activity::activity': no overloaded function takes 3 arguments
+      D:\2 курс\OOP\BDSMaksym-OOP2025\manager.cpp(107,19):
+      while trying to match the argument list '(ActivityInfo, double, double)'
+  
+  nutritions.cpp
+D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.h(6,10): error C3646: 'meal_info': unknown override specifier
+  (compiling source file 'nutritions.cpp')
+  
+D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.h(6,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'nutritions.cpp')
+  
+D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.h(10,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'nutritions.cpp')
+  
+D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.h(10,26): error C2143: syntax error: missing ',' before '&'
+  (compiling source file 'nutritions.cpp')
+  
+D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.cpp(5,13): error C2511: 'nutritions::nutritions(const Meal &,double)': overloaded member function not found in 'nutritions'
+      D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.h(4,7):
+      see declaration of 'nutritions'
+  
+D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.cpp(6,39): error C2550: 'nutritions::{ctor}': constructor initializer lists are only allowed on constructor definitions
+D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.cpp(9,13): error C2065: 'meal_info': undeclared identifier
+D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.cpp(9,37): error C2065: 'meal_info': undeclared identifier
+D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.cpp(9,57): error C2065: 'meal_info': undeclared identifier
+D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.cpp(13,12): error C2065: 'meal_info': undeclared identifier
+D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.cpp(16,12): error C2065: 'meal_info': undeclared identifier
+D:\2 курс\OOP\BDSMaksym-OOP2025\nutritions.cpp(19,12): error C2065: 'meal_info': undeclared identifier
+  Generating Code...
