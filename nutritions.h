@@ -48,7 +48,7 @@ public:
     Self_Cook(const std::string& n) : name(n) {}
     ~Self_Cook() override = default;
 
-    void addIngredient(const Dishes& ingredient, double grams);
+    void add_ingredient(const std::string& ingredient_name, double grams);
     std::string get_name() const override;
     double get_proteins() const override;
     double get_fats() const override;

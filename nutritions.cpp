@@ -37,9 +37,11 @@ Dishes Dishes::Ingredient(const std::string& ingredient_find) {
     return Dishes("Blank", 0, 0, 0);
 }
 
-void Self_Cook::addIngredient(const Dishes& ingredient, double grams) {
+void Self_Cook::add_ingredient(const std::string& ingredient_name, double grams) {
+    Dishes ingredient = Dishes::Ingredient(ingredient_name);
     components.push_back({ ingredient, grams });
 }
+
 std::string Self_Cook::get_name() const { return name; }
 
 double Self_Cook::get_proteins() const {
