@@ -49,6 +49,7 @@
     <ClInclude Include="nutritions.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="ingredients_list.txt" />
     <Text Include="meals_list.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

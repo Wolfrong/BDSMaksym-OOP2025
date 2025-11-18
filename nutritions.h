@@ -1,39 +1,71 @@
 #pragma once
 #include <string>
+#include <vector>
 
-class nutritions {
-private:
-    Meal meal_info;
-    double meal_weight;
-
+class Meal {
 public:
-    nutritions(const Meal& meal, double g = 100);
-    // звичайні гетери для КБЖУ, їх берем в менеджері
-    double get_calories() const;
-    double get_protein() const;
-    double get_fat() const;
-    double get_carbs() const;
-    double get_meal_weight() const;
+    virtual ~Meal() = default;
+
+    virtual std::string get_name() const = 0;
+
+    virtual double get_proteins() const = 0;
+    virtual double get_fats() const = 0;
+    virtual double get_carbs() const = 0;
+    virtual double get_calories() const { return get_proteins() * 4 + get_fats() * 9 + get_carbs() * 4; }
 };
 
-// класс для самих страв
-class Meal{
-public:
-    std::string dish_name;
-    // скільки БЖУ на 100г страви
+class Dishes : public Meal {
+private:
+    std::string name;
     double protein;
     double fat;
     double carbs;
 
-    Meal(const std::string& n = "", double p = 0, double f = 0, double c = 0)
-        : dish_name(n), protein(p), fat(f), carbs(c) {
-    }
-	// крч ми читаєм наш файлік зі стравами і БЖУ
-    static Meal find_dish(const std::string& meal_find);
+public:
+    Dishes(const std::string& n, double p, double f, double c) : name(n), protein(p), fat(f), carbs(c) {}
+
+    std::string get_name() const override { return name; }
+    double get_proteins() const override { return protein; }
+    double get_fats() const override { return fat; }
+    double get_carbs() const override { return carbs; }
+
+    static Dishes Dish(const std::string& name);
+	static Dishes Ingredient(const std::string& name);
 };
 
-// Для виклику в менеджері можна прописувати типу: "nutritions first_meal = nutritions(Meal::find_dish(вот тут берем string страви що впише користувач), Вага у грамах)"
-// тобто ми створюємо прийом їжі де шукаємо страву що вибирає користувач (на даний момент перелік збережено у txt) і вказуємо вагу
-// далі просто гетерами можна витягувати КБЖУ і вагу прийому їжі
-// А потім вся в відповідальність на менеджері на запис у календар, бо немає сенсу його ускладнювати
-// Якщо треба добавить воду то прописувати той самий об'єкт а в назву Water і грамовку, доки воно буде рахуватись прийомом їжі окремим))
+class Self_Cook : public Meal {
+private:
+    std::string name;
+
+    struct Component {
+        Dishes ingredient;
+        double grams;
+    };
+
+    std::vector<Component> components;
+
+public:
+    Self_Cook(const std::string& n) : name(n) {}
+    ~Self_Cook() override = default;
+
+    void addIngredient(const Dishes& ingredient, double grams);
+    std::string get_name() const override;
+    double get_proteins() const override;
+    double get_fats() const override;
+    double get_carbs() const override;
+};
+
+class nutritions {
+private:
+    Meal* meal;
+    double weight;
+
+public:
+    nutritions(Meal* m, double g = 100) : meal(m), weight(g) {}
+
+    double get_calories() const;
+    double get_proteins() const;
+    double get_fats() const;
+    double get_carbs() const;
+	double get_meal_weight() const;
+};
