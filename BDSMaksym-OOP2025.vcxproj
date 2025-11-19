@@ -38,6 +38,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="activity.cpp" />
+    <ClCompile Include="calendar.cpp" />
     <ClCompile Include="manager.cpp" />
     <ClCompile Include="mood.cpp" />
     <ClCompile Include="nutritions.cpp" />
