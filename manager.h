@@ -1,6 +1,5 @@
 #ifndef MANAGER_H
 #define MANAGER_H
-
 #include <string>
 #include "calendar.h"
 
@@ -22,7 +21,7 @@ public:
     void test_run();
 
 private:
-    CalendarHealth* log_{nullptr};
+    CalendarBase* log{nullptr};
     static std::string today_ddmmyyyy();
 };
 

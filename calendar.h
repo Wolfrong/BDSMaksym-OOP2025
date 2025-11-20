@@ -2,15 +2,45 @@
 #include <string>
 #include <vector>
 
-class CalendarHealth {
+class CalendarBase {
+public:
+    virtual ~CalendarBase() = default;
+
+    virtual bool addActivity(const std::string& date,
+                             const std::string& type,
+                             double durationMin,
+                             double weightKg) = 0;
+
+    virtual bool addFood(const std::string& date,
+                         const std::string& dish,
+                         double grams,
+                         double kcal,
+                         double protein,
+                         double fat,
+                         double carbs,
+                         double waterLiters) = 0;
+
+    virtual bool addCalories(const std::string& date,
+                             const std::string& dish,
+                             int calories) = 0;
+
+    virtual bool addMood(const std::string& date,
+                         int mood,
+                         const std::string& note) = 0;
+
+    virtual bool writeCaloriesSummary(const std::string& date) = 0;
+
+    virtual bool listByDate(const std::string& date,
+                            std::vector<std::string>& out) const = 0;
+};
+
+class CalendarHealth : public CalendarBase {
 public:
     CalendarHealth(std::string path = "calendar.txt");
-
     bool addActivity(const std::string& date,
                      const std::string& type,
                      double durationMin,
-                     double weightKg);
-
+                     double weightKg) override;
     bool addFood(const std::string& date,
                  const std::string& dish,
                  double grams,
@@ -18,26 +48,17 @@ public:
                  double protein,
                  double fat,
                  double carbs,
-                 double waterLiters);
+                 double waterLiters) override;
 
-    bool addCalories(const std::string& date,
-                     const std::string& dish,
-                     int calories);
+    bool addCalories(const std::string& date,const std::string& dish,int calories) override;
 
-    bool addMood(const std::string& date,
-                 int mood,
-                 const std::string& note);
+    bool addMood(const std::string& date,int mood,const std::string& note) override;
 
-    bool computeCaloriesForDate(const std::string& date,
-                                double& kcalIn, double& kcalOut) const;
+    bool writeCaloriesSummary(const std::string& date) override;
 
-    bool writeCaloriesSummary(const std::string& date);
-
-    bool listByDate(const std::string& date,
-                    std::vector<std::string>& out) const;
+    bool listByDate(const std::string& date,std::vector<std::string>& out) const override;
 
     static std::string today_ddmmyyyy();
-
 private:
     std::string path_;
 
@@ -46,4 +67,6 @@ private:
 
     bool ensureSkeleton() const;
     bool insertUnderSection(const std::string& section, const std::string& line) const;
+
+    bool computeCaloriesForDate(const std::string& date,double& kcalIn, double& kcalOut) const;
 };
