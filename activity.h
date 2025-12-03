@@ -1,22 +1,8 @@
 #pragma once
 #include <string>
+#include <functional>
 
-enum class ActivityKind {
-    Simple,     
-    Cardio,     
-    Strength    
-};
-
-class ActivityBase {
-public:
-    virtual ~ActivityBase() = default;
-
-    virtual std::string getName() const = 0;
-
-    // Динамічний поліморфізм- різна формула для різних типів
-    virtual double calculate(double durationMin, double weightKg) const = 0;
-};
-
+// inheritance changed to strategy type pattern
 class ActivityInfo {
 public:
     std::string name;
@@ -28,18 +14,23 @@ public:
     static ActivityInfo find_activity(const std::string& activity_name);
 };
 
-class activity : public ActivityBase {
+class activity {
 public:
-    ActivityInfo info;     // агрегація
+    ActivityInfo info;
     double durationMin{};
     double weightKg{};
-    ActivityKind kind = ActivityKind::Simple; 
 
+private:
+    std::function<double(double, double, double)> calcStrategy;
+
+public:
     activity() = default;
-    activity(const ActivityInfo& i, double d, double w, ActivityKind k);
+    activity(const ActivityInfo& i, double d, double w);
 
-    std::string getName() const override;
-    double calculate(double durationMin, double weightKg) const override;
-
+    std::string getName() const;
+    double calculate(double durationMin, double weightKg) const;
     double calculate() const;
+
+private:
+    void assignStrategy();  // вибір стратегії
 };

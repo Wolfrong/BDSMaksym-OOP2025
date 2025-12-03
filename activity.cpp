@@ -9,53 +9,56 @@ ActivityInfo::ActivityInfo(const std::string& n, double met)
 
 ActivityInfo ActivityInfo::find_activity(const std::string& activity_name) {
     std::ifstream file("activity_MET.txt");
-    std::string name;
+    std::string n;
     double met;
 
-    if (!file.is_open()) {
-        std::cerr << "Error: could not open activity_MET.txt\n";
-        return ActivityInfo(activity_name, 1.0);
-    }
+    while (file >> n >> met)
+        if (n == activity_name)
+            return ActivityInfo(n, met);
 
-    while (file >> name >> met) {
-        if (name == activity_name) {
-            return ActivityInfo(name, met);
-        }
-    }
-
-    std::cerr << "Warning: activity \"" << activity_name
-        << "\" not found in catalog. Default MET = 1.0\n";
     return ActivityInfo(activity_name, 1.0);
 }
 
-activity::activity(const ActivityInfo& i, double d, double w, ActivityKind k)
-    : info(i), durationMin(d), weightKg(w), kind(k) {
+activity::activity(const ActivityInfo& i, double d, double w)
+    : info(i), durationMin(d), weightKg(w)
+{
+    assignStrategy();
+}
+
+void activity::assignStrategy() {
+    std::string n = info.name;
+
+    if (n == "Running" || n == "Cycling" || n == "Swimming" ||
+        n == "Hiking" || n == "Rowing" || n == "JumpRope")
+    {
+        calcStrategy = [](double dur, double w, double MET) {
+            return dur * MET * w * 0.0200;
+            };
+        return;
+    }
+
+    if (n == "StrengthTraining" || n == "Crossfit" || n == "Boxing")
+    {
+        calcStrategy = [](double dur, double w, double MET) {
+            return dur * w * 0.0300;
+            };
+        return;
+    }
+
+    calcStrategy = [](double dur, double w, double MET) {
+        return dur * MET * w * 0.0175;
+        };
 }
 
 std::string activity::getName() const {
     return info.name;
 }
+
 double activity::calculate(double durationMin, double weightKg) const {
-    switch (kind) {
-
-    case ActivityKind::Simple:
-        // всі low-intensity активності
-        return durationMin * info.MET * weightKg * 0.0175;
-
-    case ActivityKind::Cardio:
-        // cardio більш енерговитратне
-        return durationMin * info.MET * weightKg * 0.02;
-
-    case ActivityKind::Strength:
-        // силові мають іншу фізіологію
-        return durationMin * weightKg * 0.03;
-
-    default:
-        return durationMin * info.MET * weightKg * 0.0175;
-    }
+    return calcStrategy(durationMin, weightKg, info.MET);
 }
 
 double activity::calculate() const {
-    return calculate(durationMin, weightKg);
+    return calcStrategy(durationMin, weightKg, info.MET);
 }
 
