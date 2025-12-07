@@ -10,6 +10,7 @@ static void safeIgnoreLine()
 {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
+
 manager::manager(std::string nm, std::string g, int age_, double w, double h, bool incl)
     : name(std::move(nm))
     , gender(std::move(g))
@@ -19,7 +20,9 @@ manager::manager(std::string nm, std::string g, int age_, double w, double h, bo
     , inclusive(incl)
     , log(nullptr)
 {
-    log = new CalendarHealth("calendar.txt");
+    CalendarBase* base = new CalendarHealth("calendar.txt");
+    CalendarBase* logged = new LoggingCalendarDecorator(base);
+    log = new ValidatingCalendarDecorator(logged);
 }
 
 manager::~manager()
@@ -33,12 +36,13 @@ std::string manager::today_ddmmyyyy()
     return CalendarHealth::today_ddmmyyyy();
 }
 
-
 void manager::test_run()
 {
     if (!log)
     {
-        log = new CalendarHealth("calendar.txt");
+        CalendarBase* base = new CalendarHealth("calendar.txt");
+        CalendarBase* logged = new LoggingCalendarDecorator(base);
+        log = new ValidatingCalendarDecorator(logged);
     }
 
     const std::string today = today_ddmmyyyy();
@@ -47,21 +51,16 @@ void manager::test_run()
     std::cout << "today`s mood (1..5): ";
     std::cin  >> moodVal;
 
-    if (moodVal >= 1 && moodVal <= 5) {
-        if (!log->addMood(today, moodVal, "")) {
-            std::cout << "write error (mood)\n";
+    bool moodOk = log->addMood(today, moodVal, "");
+    if (!moodOk) {
+        std::cout << "error: mood write/validation failed\n";
+    } else if (moodVal < 2) {
+        Mood m(nullptr, jokesFile.c_str());
+        m.setMood(moodVal);
+        char buf[512];
+        if (m.randomJoke(buf, sizeof(buf))) {
+            std::cout << "\njoke: " << buf << "\n";
         }
-
-        if (moodVal < 2) {
-            Mood m(nullptr, jokesFile.c_str());
-            m.setMood(moodVal);
-            char buf[512];
-            if (m.randomJoke(buf, sizeof(buf))) {
-                std::cout << "\njoke: " << buf << "\n";
-            }
-        }
-    } else {
-        std::cout << "error: mood out of range\n";
     }
 
     int nFood = 0;
@@ -86,7 +85,7 @@ void manager::test_run()
         safeIgnoreLine();
 
         Dishes d = Dishes::Dish(dish);
-        nutritions nut(&d, grams);
+        NutritionDecorator nut(&d, grams);
 
         const double kcal = nut.get_calories();
         const double p    = nut.get_proteins();
