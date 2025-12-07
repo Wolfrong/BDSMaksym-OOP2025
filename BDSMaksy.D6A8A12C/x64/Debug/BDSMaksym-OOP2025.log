@@ -1,8 +1,5 @@
 ﻿  activity.cpp
   calendar.cpp
   manager.cpp
-  mood.cpp
-  nutritions.cpp
   Generating Code...
-  LINK : D:\2 курс\OOP\BDSMaksym-OOP2025\x64\Debug\BDSMaksym-OOP2025.exe not found or not built by the last incremental link; performing full link
   BDSMaksym-OOP2025.vcxproj -> D:\2 курс\OOP\BDSMaksym-OOP2025\x64\Debug\BDSMaksym-OOP2025.exe
