@@ -1,22 +1,6 @@
 #pragma once
 #include <string>
 
-enum class ActivityKind {
-    Simple,     
-    Cardio,     
-    Strength    
-};
-
-class ActivityBase {
-public:
-    virtual ~ActivityBase() = default;
-
-    virtual std::string getName() const = 0;
-
-    // Динамічний поліморфізм- різна формула для різних типів
-    virtual double calculate(double durationMin, double weightKg) const = 0;
-};
-
 class ActivityInfo {
 public:
     std::string name;
@@ -28,18 +12,32 @@ public:
     static ActivityInfo find_activity(const std::string& activity_name);
 };
 
+class ActivityBase {
+public:
+    virtual ~ActivityBase() = default;
+
+    virtual std::string getName() const = 0;
+
+    // Template Method
+    virtual double calculate(double durationMin, double weightKg) const = 0;
+};
+
 class activity : public ActivityBase {
 public:
-    ActivityInfo info;     // агрегація
+    ActivityInfo info;    
     double durationMin{};
     double weightKg{};
-    ActivityKind kind = ActivityKind::Simple; 
 
     activity() = default;
-    activity(const ActivityInfo& i, double d, double w, ActivityKind k);
+    activity(const ActivityInfo& i, double d, double w);
 
     std::string getName() const override;
-    double calculate(double durationMin, double weightKg) const override;
 
+    // Template Method
+    double calculate(double durationMin, double weightKg) const override;
     double calculate() const;
+
+private:
+    // Hook
+    double calcFormula(double duration, double weight, double MET) const;
 };
